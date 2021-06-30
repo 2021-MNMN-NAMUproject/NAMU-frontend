@@ -1,10 +1,12 @@
 import logo from "./logo.svg";
 import "./App.css";
+import Headerbar from "./components/Headerbar";
+import styled from "styled-components";
 
 function App() {
   return (
     <div className="App">
-      <div className="navbar">React 기본 세팅 완료</div>
+      <Headerbar />
     </div>
   );
 }
