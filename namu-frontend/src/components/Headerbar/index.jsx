@@ -32,8 +32,13 @@ const HeaderLogo = styled.div`
 `;
 
 const Title = styled.header`
-  font-size: 32px;
-  color: #000;
+  font-size: 20px;
+  color: #fff4e6;
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  margin-left: 60px;
 `;
 
 const HeaderSubmenu = styled.div`
@@ -53,9 +58,36 @@ const SubmenuLinks = styled.div`
   color: #ffec99;
   padding: 11px 16px;
   display: block;
+
+  &:hover {
+    color: #000;
+    font-weight: 700;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 12px;
+    background-color: #ffec99;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &:first-child::before {
+    display: none;
+  }
 `;
 
-const SearchIcon = styled.div``;
+const SearchIcon = styled.div`
+  height: 34px;
+  position: relative;
+  top: 8px;
+`;
+
+const SearchInput = styled.div``;
 
 const HeaderMainmenu = styled.div`
   position: absolute;
@@ -86,12 +118,17 @@ const MainmenuContents = styled.div`
   position: fixed;
   left: 0;
   display: none;
+
+  &:hover {
+    display: block;
+  }
 `;
 
 const ContentsMenu = styled.div`
-  display: block;
-  background-color: red;
+  background-color: orange;
 `;
+
+const ContentInner = styled.div``;
 
 const Headerbar = () => {
   return (
@@ -105,18 +142,18 @@ const Headerbar = () => {
           <HeaderSubmenu>
             <Submenu>
               <SubmenuLinks to="about">로그인</SubmenuLinks>
-            </Submenu>
-            <Submenu>
               <SubmenuLinks to="about">회원가입</SubmenuLinks>
-            </Submenu>
-            <Submenu>
               <SubmenuLinks to="about">이용약관</SubmenuLinks>
             </Submenu>
+
             <Submenu>
               <SearchIcon>
                 <BiSearchAlt2 />
               </SearchIcon>
               <SubmenuLinks to="about">검색하기</SubmenuLinks>
+              <SearchInput>
+                <input type="text" />
+              </SearchInput>
             </Submenu>
           </HeaderSubmenu>
 
@@ -125,45 +162,57 @@ const Headerbar = () => {
               <MainmenuName>ABOUT US</MainmenuName>
               <MainmenuContents>
                 <ContentsMenu>
-                  <HeaderInner>나무 알아보기</HeaderInner>
+                  <ContentInner>나무 알아보기</ContentInner>
                 </ContentsMenu>
               </MainmenuContents>
+            </Mainmenu>
 
+            <Mainmenu>
               <MainmenuName>활동</MainmenuName>
               <MainmenuContents>
                 <ContentsMenu>
-                  <HeaderInner>나무 활동하기</HeaderInner>
+                  <ContentInner>나무 활동하기</ContentInner>
                 </ContentsMenu>
               </MainmenuContents>
+            </Mainmenu>
 
+            <Mainmenu>
               <MainmenuName>참여</MainmenuName>
               <MainmenuContents>
                 <ContentsMenu>
-                  <HeaderInner>나무 참여하기</HeaderInner>
+                  <ContentInner>나무 참여하기</ContentInner>
                 </ContentsMenu>
               </MainmenuContents>
+            </Mainmenu>
 
+            <Mainmenu>
               <MainmenuName>소식</MainmenuName>
               <MainmenuContents>
                 <ContentsMenu>
-                  <HeaderInner>나무 소식 듣기</HeaderInner>
+                  <ContentInner>나무 소식 듣기</ContentInner>
                 </ContentsMenu>
               </MainmenuContents>
+            </Mainmenu>
 
+            <Mainmenu>
               <MainmenuName>공지사항</MainmenuName>
               <MainmenuContents>
                 <ContentsMenu>
-                  <HeaderInner>나무 알리미</HeaderInner>
+                  <ContentInner>나무 알리미</ContentInner>
                 </ContentsMenu>
               </MainmenuContents>
+            </Mainmenu>
 
+            <Mainmenu>
               <MainmenuName>후원금 내역</MainmenuName>
               <MainmenuContents>
                 <ContentsMenu>
-                  <HeaderInner>후원금 알리미</HeaderInner>
+                  <ContentInner>후원금 알리미</ContentInner>
                 </ContentsMenu>
               </MainmenuContents>
+            </Mainmenu>
 
+            <Mainmenu>
               <MainmenuName className="btn btn--white">후원하기</MainmenuName>
             </Mainmenu>
           </HeaderMainmenu>
