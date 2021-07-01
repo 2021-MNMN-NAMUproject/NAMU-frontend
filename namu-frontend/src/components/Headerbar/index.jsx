@@ -73,6 +73,7 @@ const SubmenuLinks = styled.div`
     position: absolute;
     top: 0;
     bottom: 0;
+    left: 1px;
     margin: auto;
   }
 
@@ -81,13 +82,46 @@ const SubmenuLinks = styled.div`
   }
 `;
 
-const SearchIcon = styled.div`
+const SearchMenu = styled.div`
   height: 34px;
+  padding-left: 10px;
+  padding-right: 20px;
   position: relative;
-  top: 8px;
 `;
 
-const SearchInput = styled.div``;
+const SearchInput = styled.div`
+  width: 30px;
+  height: 30px;
+  margin-top: 3px;
+  padding: 4px 10px;
+  border: 1px solid #ffec99;
+  box-sizing: border-box;
+  border-radius: 5px;
+  outline: none;
+  background-color: #fff4e6;
+  color: #343a40;
+  font-size: 12px;
+  transition: width 0.4s;
+
+  &:hover {
+    width: 190px;
+    border: 2px solid #ffec99;
+  }
+`;
+
+const SearchIcon = styled.div`
+  font-size: 20px;
+  position: absolute;
+  color: #000;
+  padding-left: 5px;
+  top: 6px;
+  margin: auto;
+  transition: 0.4s;
+
+  &:focus {
+    opacity: 0;
+  }
+`;
 
 const HeaderMainmenu = styled.div`
   position: absolute;
@@ -147,13 +181,13 @@ const Headerbar = () => {
             </Submenu>
 
             <Submenu>
-              <SearchIcon>
-                <BiSearchAlt2 />
-              </SearchIcon>
-              <SubmenuLinks to="about">검색하기</SubmenuLinks>
-              <SearchInput>
-                <input type="text" />
-              </SearchInput>
+              <SearchMenu>
+                <SearchIcon>
+                  <BiSearchAlt2 />
+                </SearchIcon>
+
+                <SearchInput></SearchInput>
+              </SearchMenu>
             </Submenu>
           </HeaderSubmenu>
 
