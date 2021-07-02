@@ -5,6 +5,7 @@ import { BiSearchAlt2 } from "react-icons/bi";
 const Header = styled.header`
   background-color: #0ca678;
   border-bottom: 1px solid #343a40;
+  font-family: "Noto Sans CJK KR";
   position: fixed;
   top: 0;
   z-index: 9;
@@ -22,13 +23,13 @@ const HeaderInner = styled.div`
 `;
 
 const HeaderLogo = styled.div`
-  display: block;
-  height: 75px;
+  display: inline-block;
   position: absolute;
-  top: 0;
-  bottom: 0;
+  background-color: #fff;
+  border-radius: 50px;
   left: 0;
   margin: auto;
+  z-index: 10;
 `;
 
 const Title = styled.header`
@@ -36,14 +37,14 @@ const Title = styled.header`
   color: #fff4e6;
   display: inline-block;
   position: absolute;
-  top: 20px;
+  top: 35px;
   left: 0;
-  margin-left: 60px;
+  margin-left: 120px;
 `;
 
 const HeaderSubmenu = styled.div`
   position: absolute;
-  top: 10px;
+  top: 0;
   right: 0;
   display: flex;
 `;
@@ -60,7 +61,7 @@ const SubmenuLinks = styled.div`
   display: block;
 
   &:hover {
-    color: #000;
+    color: #343a40;
     font-weight: 700;
   }
 
@@ -84,7 +85,7 @@ const SubmenuLinks = styled.div`
 
 const SearchMenu = styled.div`
   height: 34px;
-  padding-left: 10px;
+  padding-left: 5px;
   padding-right: 20px;
   position: relative;
 `;
@@ -118,7 +119,7 @@ const SearchIcon = styled.div`
   margin: auto;
   transition: 0.4s;
 
-  &:focus {
+  &:hover {
     opacity: 0;
   }
 `;
@@ -137,7 +138,7 @@ const Mainmenu = styled.div`
 
 const MainmenuName = styled.div`
   padding: 10px 20px 34px 20px;
-  font-size: 13px;
+  font-size: 16px;
 
   &:hover {
     background-color: #343a40;
@@ -155,11 +156,14 @@ const MainmenuContents = styled.div`
 
   &:hover {
     display: block;
+    wid
   }
 `;
 
 const ContentsMenu = styled.div`
   background-color: orange;
+  display: flex;
+  padding: 20px 0;
 `;
 
 const ContentInner = styled.div``;
@@ -169,7 +173,9 @@ const Headerbar = () => {
     <>
       <Header>
         <HeaderInner>
-          <HeaderLogo to="/">LOGO</HeaderLogo>
+          <HeaderLogo to="">
+            <img src="/NAMUlogo.png" width="100px" height="100px" />
+          </HeaderLogo>
 
           <Title>후원 플랫폼 나무 | 멍냥멍냥</Title>
 
