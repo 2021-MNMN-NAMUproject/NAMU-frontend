@@ -51,6 +51,7 @@ const HeaderSubmenu = styled.div`
 
 const Submenu = styled.ul`
   display: flex;
+  margin-left: 7px;
 `;
 
 const SubmenuLinks = styled.div`
@@ -132,9 +133,7 @@ const HeaderMainmenu = styled.div`
   display: flex;
 `;
 
-const Mainmenu = styled.div`
-  display: flex;
-`;
+const Mainmenu = styled.div``;
 
 const MainmenuName = styled.div`
   padding: 10px 20px 34px 20px;
@@ -145,6 +144,10 @@ const MainmenuName = styled.div`
     color: #0ca678;
     font-weight: 700;
     border-radius: 6px 6px 0 0;
+
+    .MainmenuContents {
+      display: block;
+    }
   }
 `;
 
@@ -156,17 +159,18 @@ const MainmenuContents = styled.div`
 
   &:hover {
     display: block;
-    wid
   }
 `;
 
 const ContentsMenu = styled.div`
-  background-color: orange;
-  display: flex;
-  padding: 20px 0;
+  background-color: red;
+  height: 200px;
 `;
 
-const ContentInner = styled.div``;
+const ContentInner = styled.div`
+  background-color: orange;
+  height: 100px;
+`;
 
 const Headerbar = () => {
   return (
