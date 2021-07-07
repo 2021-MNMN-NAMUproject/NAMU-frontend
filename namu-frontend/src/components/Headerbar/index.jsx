@@ -60,6 +60,7 @@ const SubmenuLinks = styled.div`
   color: #ffec99;
   padding: 11px 16px;
   display: block;
+  cursor: pointer;
 
   &:hover {
     color: #343a40;
@@ -144,10 +145,22 @@ const MainmenuName = styled.div`
     color: #0ca678;
     font-weight: 700;
     border-radius: 6px 6px 0 0;
+  }
+`;
 
-    .MainmenuContents {
-      display: block;
-    }
+const hoverMainmenuContents = styled.div`
+  /* width: 100%;
+  position: fixed;
+  left: 0; */
+  /* display: ${(props) => {
+    if (props.hover) return "block";
+    else return "none";
+  }}; */
+
+  &:hover {
+    display: block;
+    background-color: peachpuff;
+    color: green;
   }
 `;
 
@@ -156,10 +169,7 @@ const MainmenuContents = styled.div`
   position: fixed;
   left: 0;
   display: none;
-
-  &:hover {
-    display: block;
-  }
+  ${hoverMainmenuContents}
 `;
 
 const ContentsMenu = styled.div`
@@ -204,7 +214,7 @@ const Headerbar = () => {
           <HeaderMainmenu>
             <Mainmenu>
               <MainmenuName>ABOUT US</MainmenuName>
-              <MainmenuContents>
+              <MainmenuContents display="block">
                 <ContentsMenu>
                   <ContentInner>나무 알아보기</ContentInner>
                 </ContentsMenu>
