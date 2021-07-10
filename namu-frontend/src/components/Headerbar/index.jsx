@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { BiSearchAlt2 } from "react-icons/bi";
+import Button from "../Button";
 
 const Header = styled.header`
   background-color: #0ca678;
@@ -90,6 +91,7 @@ const SearchMenu = styled.div`
   padding-left: 5px;
   padding-right: 20px;
   position: relative;
+  cursor: pointer;
 `;
 
 const SearchInput = styled.div`
@@ -128,17 +130,17 @@ const SearchIcon = styled.div`
 
 const HeaderMainmenu = styled.div`
   position: absolute;
-  bottom: 0;
+
+  bottom: -20px;
   right: 0;
   z-index: 1;
   display: flex;
 `;
 
-const Mainmenu = styled.div``;
-
 const MainmenuName = styled.div`
   padding: 10px 20px 34px 20px;
   font-size: 16px;
+  cursor: pointer;
 
   &:hover {
     background-color: #343a40;
@@ -148,38 +150,31 @@ const MainmenuName = styled.div`
   }
 `;
 
-const hoverMainmenuContents = styled.div`
-  /* width: 100%;
-  position: fixed;
-  left: 0; */
-  /* display: ${(props) => {
-    if (props.hover) return "block";
-    else return "none";
-  }}; */
-
-  &:hover {
-    display: block;
-    background-color: peachpuff;
-    color: green;
-  }
-`;
-
 const MainmenuContents = styled.div`
   width: 100%;
+  background-color: #343a40;
   position: fixed;
   left: 0;
   display: none;
-  ${hoverMainmenuContents}
+`;
+
+const Mainmenu = styled.div`
+  &:hover ${MainmenuContents} {
+    display: block;
+  }
 `;
 
 const ContentsMenu = styled.div`
-  background-color: red;
-  height: 200px;
+  background-color: #ffec99;
+  height: 100px;
+  color: #343a40;
+  font-size: 16px;
 `;
 
 const ContentInner = styled.div`
-  background-color: orange;
+  background-color: #343a40;
   height: 100px;
+  margin-top: 50px;
 `;
 
 const Headerbar = () => {
@@ -214,60 +209,54 @@ const Headerbar = () => {
           <HeaderMainmenu>
             <Mainmenu>
               <MainmenuName>ABOUT US</MainmenuName>
-              <MainmenuContents display="block">
-                <ContentsMenu>
-                  <ContentInner>나무 알아보기</ContentInner>
-                </ContentsMenu>
+              <MainmenuContents>
+                <ContentInner>나무 알아보기</ContentInner>
+                <ContentsMenu>나무에 대해서 알아봅시다</ContentsMenu>
               </MainmenuContents>
             </Mainmenu>
 
             <Mainmenu>
               <MainmenuName>활동</MainmenuName>
               <MainmenuContents>
-                <ContentsMenu>
-                  <ContentInner>나무 활동하기</ContentInner>
-                </ContentsMenu>
+                <ContentInner>나무 활동하기</ContentInner>
+                <ContentsMenu>나무 활동에 대해서 알아봅시다</ContentsMenu>
               </MainmenuContents>
             </Mainmenu>
 
             <Mainmenu>
               <MainmenuName>참여</MainmenuName>
               <MainmenuContents>
-                <ContentsMenu>
-                  <ContentInner>나무 참여하기</ContentInner>
-                </ContentsMenu>
+                <ContentInner>나무 참여하기</ContentInner>
+                <ContentsMenu>나무에 같이 이렇게 참여해봅시다</ContentsMenu>
               </MainmenuContents>
             </Mainmenu>
 
             <Mainmenu>
               <MainmenuName>소식</MainmenuName>
               <MainmenuContents>
-                <ContentsMenu>
-                  <ContentInner>나무 소식 듣기</ContentInner>
-                </ContentsMenu>
+                <ContentInner>나무 소식 듣기</ContentInner>
+                <ContentsMenu>나무의 소식을 들어봅시다</ContentsMenu>
               </MainmenuContents>
             </Mainmenu>
 
             <Mainmenu>
               <MainmenuName>공지사항</MainmenuName>
               <MainmenuContents>
-                <ContentsMenu>
-                  <ContentInner>나무 알리미</ContentInner>
-                </ContentsMenu>
+                <ContentInner>나무 알리미</ContentInner>
+                <ContentsMenu>나무의 공지사항을 알려줍니다</ContentsMenu>
               </MainmenuContents>
             </Mainmenu>
 
             <Mainmenu>
               <MainmenuName>후원금 내역</MainmenuName>
               <MainmenuContents>
-                <ContentsMenu>
-                  <ContentInner>후원금 알리미</ContentInner>
-                </ContentsMenu>
+                <ContentInner>후원금 알리미</ContentInner>
+                <ContentsMenu>후원금 내역을 공개합니다</ContentsMenu>
               </MainmenuContents>
             </Mainmenu>
 
             <Mainmenu>
-              <MainmenuName className="btn btn--white">후원하기</MainmenuName>
+              <Button>후원버튼</Button>
             </Mainmenu>
           </HeaderMainmenu>
         </HeaderInner>
