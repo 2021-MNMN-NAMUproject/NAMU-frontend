@@ -177,8 +177,6 @@ const ContentInner = styled.div`
   margin-top: 50px;
 `;
 
-const 
-
 const Headerbar = () => {
   return (
     <>
