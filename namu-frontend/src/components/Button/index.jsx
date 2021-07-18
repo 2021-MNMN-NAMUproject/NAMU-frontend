@@ -56,7 +56,7 @@ const BasicBtn = styled.div`
 const Button = () => {
   return (
     <>
-      <BasicBtn white>후원</BasicBtn>
+      <BasicBtn white>후원버튼예정</BasicBtn>
     </>
   );
 };
