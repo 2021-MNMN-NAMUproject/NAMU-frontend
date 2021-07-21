@@ -166,7 +166,7 @@ const Mainmenu = styled.div`
 
 const ContentsMenu = styled.div`
   background-color: #ffec99;
-  height: 100px;
+  height: 40px;
   color: #343a40;
   font-size: 16px;
 `;
